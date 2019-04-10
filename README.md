@@ -1,2 +1,2 @@
-# portalstba
+# portalstbaGITHUB
 Sistem Informasi Akademik
