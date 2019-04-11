@@ -1,4 +1,4 @@
-<div class="page" style="background-color:rgb(201, 201, 201)">
+<div class="page">
     <div class="page-content container-fluid">
         <div class="row" data-plugin="matchHeight" data-by-row="true">
             <div class="col-xxl-12">

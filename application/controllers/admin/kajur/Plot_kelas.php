@@ -25,7 +25,7 @@ class Plot_kelas extends CI_Controller
             $config['first_url'] = base_url() . 'plot_kelas/index';
         }
 
-        $config['per_page'] = 10;
+        $config['per_page'] = 100000000000;
         $config['page_query_string'] = TRUE;
         $config['total_rows'] = $this->Plot_model->total_rows($q);
         $plot_kelas = $this->Plot_model->get_limit_data($config['per_page'], $start, $q);

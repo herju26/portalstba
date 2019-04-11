@@ -22,7 +22,7 @@
 	    <tr><td>Semester</td><td><?php echo $semester; ?></td></tr>
 	    <tr><td>Status</td><td><?php echo $status; ?></td></tr>
 	    <tr><td>Semester Prodi</td><td><?php echo $semester_prodi; ?></td></tr>
-	    <tr><td></td><td><a href="<?php echo site_url('plot_kelas') ?>" class="btn btn-default">Cancel</a></td></tr>
+	    <tr><td></td><td><a href="<?php echo site_url('admin/baak/plot_kelas') ?>" class="btn btn-default">Cancel</a></td></tr>
 	</table>
         </body>
 </html>

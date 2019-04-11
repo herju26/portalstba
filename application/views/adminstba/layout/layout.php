@@ -45,9 +45,7 @@
 
                                 <div class="footer">
                                     <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-history"></i> Updated 3 minutes ago
-                                    </div>
+                                    
                                     <footer class="footer">
             <?php $this->load->view("adminstba/layout/footer/footer") ?>
         </footer>

@@ -1,4 +1,13 @@
-<div class="page" style="background-color:rgb(201, 201, 201)">
+<div class="card">  
+    <div class="header" >
+    <div class="container">
+         <div class="header" >
+                 <h4 class="title">Jadwal KRS</h4>
+                 <p class="category">STBA LIA Yogyakarta</p>
+             <hr/>
+         </br>
+    </div>
+    <div class="page">
     <div class="page-content container-fluid">
         <div class="row" data-plugin="matchHeight" data-by-row="true">
             <div class="col-xxl-12">
@@ -7,9 +16,7 @@
                         <div class="row pb-40" data-plugin="matchHeight">
                             <div class="col-md-6">
                                 <div class="counter text-left pl-10">
-                                    <div class="counter-label"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        <?= $judul ?>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -45,6 +52,8 @@
                                 ?>
                             </div>
                         </div>
+                    </div>
+                </div>
                     </div>
                 </div>
             </div>

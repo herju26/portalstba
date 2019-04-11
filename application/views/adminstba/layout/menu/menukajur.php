@@ -6,14 +6,7 @@
                     </a>
                 </li>
                 
-                <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="pe-7s-news-paper"></i><p>DATA MASTER<b class="caret"></b></p></a>
-              <ul class="dropdown-menu">
-                <li><a href="<?php echo site_url('jurusan') ?>"><font color="black"><i class="pe-7s-science"></i><p>Jurusan</p></a></font></li>
-                <li><a href="<?php echo site_url('jenjang') ?>"><font color="black"><i class="pe-7s-shuffle"></i><p>Jenjang</p></a></font></li>
-                <li><a href="<?php echo site_url('admin/kajur/matakuliah') ?>"><font color="black"><i class="pe-7s-paperclip"></i><p>Mata Kuliah</p></a></font></li>
-              </ul>
-                </li>
+                
                 <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="pe-7s-notebook"></i><p>PLOTING<b class="caret"></b></p></a>
               <ul class="dropdown-menu">

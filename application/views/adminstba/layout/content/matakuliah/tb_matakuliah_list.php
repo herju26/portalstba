@@ -1,4 +1,4 @@
-<div class="page" style="background-color:rgb(201, 201, 201)">
+<div class="page">
     <div class="page-content container-fluid">
         <div class="row" data-plugin="matchHeight" data-by-row="true">
             <div class="col-xxl-12">
@@ -16,7 +16,7 @@
                                 <br>
                                 <div class="row" style="margin-bottom: 10px">
                                     <div class="col-md-4">
-                                        <?php echo anchor(site_url('admin/kajur/matakuliah/create'),'<i class="fa fa-plus"></i> Tambah', 'class="btn btn-primary"'); ?>
+                                        <?php echo anchor(site_url('admin/baak/matakuliah/create'),'<i class="fa fa-plus"></i> Tambah', 'class="btn btn-primary"'); ?>
                                     </div>
                                     <div class="col-md-4 text-center">
                                         <div style="margin-top: 8px" id="message">

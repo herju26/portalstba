@@ -13,6 +13,9 @@
                 <li><a href="<?php echo site_url('admin/baak/dosen') ?>"><font color="black"><i class="pe-7s-shuffle"></i><p>Dosen</p></a></font></li>
                 <li><a href="<?php echo site_url('admin/baak/room') ?>"><font color="black"><i class="pe-7s-paperclip"></i><p>Ruangan</p></a></font></li>
                 <li><a href="<?php echo site_url('admin/baak/jam') ?>"><font color="black"><i class="pe-7s-stopwatch"></i><p>Jam</p></a></font></li>
+                <li><a href="<?php echo site_url('admin/baak/jurusan') ?>"><font color="black"><i class="pe-7s-science"></i><p>Jurusan</p></a></font></li>
+                <li><a href="<?php echo site_url('admin/baak/jenjang') ?>"><font color="black"><i class="pe-7s-shuffle"></i><p>Jenjang</p></a></font></li>
+                <li><a href="<?php echo site_url('admin/baak/matakuliah') ?>"><font color="black"><i class="pe-7s-paperclip"></i><p>Mata Kuliah</p></a></font></li>
               </ul>
                 </li>
                 <li>

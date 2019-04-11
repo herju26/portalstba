@@ -1,4 +1,13 @@
-<div class="page" style="background-color:rgb(201, 201, 201)">
+<div class="card">  
+    <div class="header" >
+    <div class="container">
+         <div class="header" >
+                 <h4 class="title">Plot Kelas</h4>
+                 <p class="category">STBA LIA Yogyakarta</p>
+             <hr/>
+         </br>
+    </div>
+<div class="page">
     <div class="page-content container-fluid">
         <div class="row" data-plugin="matchHeight" data-by-row="true">
             <div class="col-xxl-12">
@@ -6,9 +15,7 @@
                     <div class="card-block p-20 pb-25">
                         <div class="row pb-40" data-plugin="matchHeight">
                             <div class="col-md-6">
-                                <div class="counter text-left pl-10">
-                                    <div class="counter-label"><i class="fa fa-list" aria-hidden="true"></i> Kelas</div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="row" style="margin-top: -40px" data-plugin="matchHeight">
@@ -59,7 +66,7 @@
 			<td><?php echo $plot_kelas->semester_prodi ?></td>
 			
             <td><?php echo $plot_kelas->jml_kelas ?></td>
-            <td><a class="btn btn-primary" href="<?= site_url('matakuliah/kelas/'.$plot_kelas->id_makul)?>"><i class="fa fa-plus"></i></a></td>
+            <td><a class="btn btn-primary" href="<?= site_url('admin/baak/matakuliah/kelas/'.$plot_kelas->id_makul)?>"><i class="fa fa-plus"></i></a></td>
 		  </tr>
                 <?php
             }
@@ -80,7 +87,8 @@
                     </div>
                 </div>
             </div>
-
+</div>
+            </div>
         </div>
     </div>
 </div>
