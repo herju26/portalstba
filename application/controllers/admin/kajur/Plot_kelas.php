@@ -65,7 +65,7 @@ class Plot_kelas extends CI_Controller
             $this->load->view('plot_kelas/tb_matakuliah_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('plot_kelas'));
+            redirect(site_url('admin/kajur/plot_kelas'));
         }
     }
 
@@ -86,7 +86,7 @@ class Plot_kelas extends CI_Controller
 	    'status' => set_value('status'),
 	    'semester_prodi' => set_value('semester_prodi'),
 	);
-        $this->load->view('plot_kelas/tb_matakuliah_form', $data);
+        $this->load->view('admin/kajur/plot_kelas/tb_matakuliah_form', $data);
     }
     
     public function create_action() 
@@ -111,7 +111,7 @@ class Plot_kelas extends CI_Controller
 
             $this->Plot_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('plot_kelas'));
+            redirect(site_url('admin/kajur/plot_kelas'));
         }
     }
     
@@ -164,7 +164,7 @@ class Plot_kelas extends CI_Controller
 
             $this->Plot_model->update($this->input->post('id_mk', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
-            redirect(site_url('plot_kelas'));
+            redirect(site_url('admin/kajur/plot_kelas'));
         }
     }
     
@@ -175,10 +175,10 @@ class Plot_kelas extends CI_Controller
         if ($row) {
             $this->Plot_model->delete($id);
             $this->session->set_flashdata('message', 'Delete Record Success');
-            redirect(site_url('plot_kelas'));
+            redirect(site_url('admin/kajur/plot_kelas'));
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('plot_kelas'));
+            redirect(site_url('admin/kajur/plot_kelas'));
         }
     }
 

@@ -8,6 +8,7 @@
              <hr/>
          </br>
     </div>
+    	<a text-align="center">
 		<?php
 			function limit_words($string, $word_limit){
                 $words = explode(" ",$string);
@@ -21,6 +22,7 @@
 				$tgl=$i['berita_tanggal'];
 				$pj=$i['pj'];
 		?>
+	</a>
 		<div class="col-md-8 col-md-offset-2">
 			<div class="card">
 				<div class="container">
@@ -30,7 +32,7 @@
 
                                 
 			<img src="<?php echo base_url().'assets/images/'.$image;?>" width="500px" height="500pxa">
-			<?php echo limit_words($isi,30);?><button style="background-color: #4091e2;" class="btn btn-default btn-block" ><a style="color:white;" href="<?php echo base_url().'index.php/post_berita/view/'.$id;?>"> Selengkapnya ></a></button>
+			<?php echo limit_words($isi,30);?><a class="btn btn-default btn-block" style="background-color: #4091e2; color:white;" href="<?php echo base_url().'index.php/post_berita/view/'.$id;?>"> Selengkapnya </a>
 <hr/></br>
 		</div>
 		</div>

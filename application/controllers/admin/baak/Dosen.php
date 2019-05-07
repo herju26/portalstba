@@ -10,6 +10,9 @@ class Dosen extends CI_Controller
         parent::__construct();
         $this->load->model('M_dosen');
         $this->load->library('form_validation');
+        if($this->session->userdata('logged_in') !== TRUE){
+      redirect('login');
+  }
     }
 
     public function index()
@@ -25,7 +28,7 @@ class Dosen extends CI_Controller
             $config['first_url'] = base_url() . 'dosen/index';
         }
 
-        $config['per_page'] = 10;
+        $config['per_page'] = 999999999;
         $config['page_query_string'] = TRUE;
         $config['total_rows'] = $this->M_dosen->total_rows($q);
         $c_dosen = $this->M_dosen->get_limit_data($config['per_page'], $start, $q);
@@ -50,6 +53,7 @@ class Dosen extends CI_Controller
         $row = $this->M_dosen->get_by_id($id);
         if ($row) {
             $data = array(
+                'title' => 'Detail Data Dosen',
                 'id_dosen' => $row->id_dosen,
                 'nidn' => $row->nidn,
                 'nama' => $row->nama,
@@ -76,12 +80,17 @@ class Dosen extends CI_Controller
     public function create() 
     {
         $data = array(
+            'title' => 'Tambah Data Dosen',
             'button' => '<i class="fa fa-save"></i> Simpan',
             'action' => site_url('admin/baak/dosen/create_action'),
             'id_dosen' => set_value('id_dosen'),
             'nidn' => set_value('nidn'),
+            'nik' => set_value('nik'),
             'nama' => set_value('nama'),
             'gender' => set_value('gender'),
+            'institusi_a' => set_value('institusi_a'),
+            'nowa' => set_value('nowa'),
+            'riwayat_p' => set_value('riwayat_p'),
             'alamat' => set_value('alamat'),
             'id_jabatan' => set_value('id_jabatan'),
             'id_status' => set_value('id_status'),
@@ -107,8 +116,12 @@ class Dosen extends CI_Controller
             $img=$this->input->post('nidn');
             $data = array(
                 'nidn' => $this->input->post('nidn',TRUE),
+                'nik' => $this->input->post('nik',TRUE),
                 'nama' => $this->input->post('nama',TRUE),
                 'gender' => $this->input->post('gender',TRUE),
+                'institusi_a' => $this->input->post('institusi_a',TRUE),
+                'nowa' => $this->input->post('nowa',TRUE),
+                'riwayat_p' => $this->input->post('riwayat_p',TRUE),
                 'alamat' => $this->input->post('alamat',TRUE),
                 'id_jabatan' => $this->input->post('id_jabatan',TRUE),
                 'agama' => $this->input->post('agama',TRUE),
@@ -136,12 +149,17 @@ class Dosen extends CI_Controller
 
         if ($row) {
             $data = array(
-                'button' => '<i class="fa fa-pencil"></i> Ubah',
+                'title' => 'Ubah Data Dosen',
+                'button' => '<i class="fa fa-pen"></i> Ubah',
                 'action' => site_url('dosen/update_action'),
                 'id_dosen' => set_value('id_dosen', $row->id_dosen),
                 'nidn' => set_value('nidn', $row->nidn),
+                'nik' => set_value('nidn', $row->nik),
                 'nama' => set_value('nama', $row->nama),
                 'gender' => set_value('gender', $row->gender),
+                'institusi_a' => set_value('institusi_a', $row->institusi_a),
+                'nowa' => set_value('nowa', $row->nowa),
+                'riwayat_p' => set_value('riwayat_p', $row->riwayat_p),
                 'alamat' => set_value('alamat', $row->alamat),
                 'id_jabatan' => set_value('id_jabatan', $row->id_jabatan),
                 'id_status' => set_value('id_status', $row->id_status),
@@ -151,12 +169,12 @@ class Dosen extends CI_Controller
                 'jabatan' => $this->db->query("select * from tb_jabatan")->result(),
                 'status' => $this->db->query("select * from tb_status_dosen")->result(),
                 'judul' => 'Ubah Dosen',
-                'content' => 'c_dosen/tbl_dosen_form',
+                'content' => 'adminstba/layout/content/dosen/tbl_dosen_form',
             );
-            $this->load->view('layout/layout',$data);
+            $this->load->view('adminstba/layout/layout',$data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('dosen'));
+            redirect(site_url('admin/baak/dosen'));
         }
     }
     

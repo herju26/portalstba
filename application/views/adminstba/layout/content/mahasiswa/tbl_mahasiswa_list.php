@@ -7,7 +7,7 @@
              <hr/>
          </br>
     </div>
-    <div class="page" style="background-color: #fff;">
+    <div class="page">
     <div class="page-content container-fluid">
         <div class="row" data-plugin="matchHeight" data-by-row="true">
             <div class="col-xxl-12">
@@ -15,9 +15,7 @@
                     <div class="card-block p-20 pb-25">
                         <div class="row pb-40" data-plugin="matchHeight">
                             <div class="col-md-6">
-                                <div class="counter text-left pl-10">
-                                    <div class="counter-label"><i class="fa fa-users" aria-hidden="true"></i> Mahaiswa</div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="row" style="margin-top: -40px" data-plugin="matchHeight">
@@ -28,9 +26,12 @@
                                         <?php echo anchor(site_url('admin/baak/mahasiswa/create'),'<i class="fa fa-plus"></i> Tambah', 'class="btn btn-primary"'); ?>
                                     </div>
                                     <div class="col-md-4 text-center">
-                                        <div style="margin-top: 8px" id="message">
+                                         <?php if ($this->session->flashdata('message')): ?>
+                                        <div class="alert alert-success" role="alert">
                                             <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
-                                        </div>
+                                    </div>
+                                    <?php endif; ?>
+
                                     </div>
                                     <div class="col-md-1 text-right">
                                     </div>
@@ -38,18 +39,19 @@
                                 </div>
                                 <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
+                                <thead style="background-color: #4091e2;">
                                     <tr>
                                         
-                                        <th style="color: #000;"><b>No</b></th>
-                                        <th style="color: #000;"><b>NIM</b></th>
-                                        <th style="color: #000;"><b>Nama</b></th>
-                                        <th style="color: #000;"><b>Sks Diakui</b></th>
-                                        <th style="color: #000;"><b>Angkatan</b></th>
-                                        <th style="color: #000;"><b>Jenjang</b></th>
-                                        <th style="color: #000;"><b>Status Masuk</b></th>
-                                        <th style="color: #000;"><b>Status aktif</b></th>
-                                        <th style="color: #000;"><b>Aksi</b></th>
+                                        <th size="18" style="color: white;"><b>No</b></th>
+                                        <th size="18" style="color: white;"><b>NIM</b></th>
+                                        <th style="color: white;"><b>Nama</b></th>
+                                        <th style="color: white;"><b>Sks Diakui</b></th>
+                                        <th style="color: white;"><b>Angkatan</b></th>
+                                        <th style="color: white;"><b>Jenjang</b></th>
+                                        <th style="color: white;"><b>Status Masuk</b></th>
+                                        <th style="color: white;"><b>Asal Universitas</b></th>
+                                        <th style="color: white;"><b>Status aktif</b></th>
+                                        <th style="color: white;"><b>Aksi</b></th>
                                         
                                     </tr>
                                 </thead>
@@ -71,8 +73,30 @@
                                         <td>
                                             <?php echo $mahasiswa->sks_diakui ?>
                                         </td>
+                                        
                                         <td>
-                                            <?php echo $mahasiswa->angkatan ?>
+                                            <?php 
+                                                if($mahasiswa->angkatan=='1'){
+                                                    echo '2017';    
+                                                } else if($mahasiswa->angkatan=='2'){
+                                                    echo '2018';    
+                                                } else if($mahasiswa->angkatan=='3'){
+                                                    echo '2019';    
+                                                }  else if($mahasiswa->angkatan=='4'){
+                                                    echo '2020';    
+                                                } else if($mahasiswa->angkatan=='5'){
+                                                    echo '2021';    
+                                                }  else if($mahasiswa->angkatan=='6'){
+                                                    echo '2022';    
+                                                }  else if($mahasiswa->angkatan=='7'){
+                                                    echo '2023';    
+                                                }  else if($mahasiswa->angkatan=='8'){
+                                                    echo '2024';    
+                                                }
+                                                else{
+                                                    echo $mahasiswa->angkatan;    
+                                                }
+                                            ?>
                                         </td>
                                         <td>
                                             <?php 
@@ -93,6 +117,9 @@
                                             ?>
                                         </td>
                                         <td>
+                                            <?php echo $mahasiswa->asal_universitas ?>
+                                        </td>
+                                        <td>
                                             <?php 
                                                 foreach($ket_mhs as $data){
                                                     if($data->id_ket_mhs==$mahasiswa->id_ket_mhs){
@@ -103,7 +130,7 @@
                                         </td>
                                         <td style="text-align:center" width="200px">
                                             
-                                            <div><a class="btn btn-primary" href="<?= site_url('admin/baak/mahasiswa/change/'.$mahasiswa->nim) ?>"><i class="pe-7s-refresh-2"></i></a>
+                                            <div><a class="btn btn-success" href="<?= site_url('admin/baak/mahasiswa/change/'.$mahasiswa->nim) ?>"><i class="pe-7s-refresh-2"></i></a>
                                             <a class="btn btn-primary" href="<?= site_url('admin/baak/mahasiswa/read/'.$mahasiswa->nim) ?>"><i class="fa fa-eye"></i></a>
                                             <a class="btn btn-warning" href="<?= site_url('admin/baak/mahasiswa/update/'.$mahasiswa->nim)?>"><i class="pe-7s-pen"></i></a></div>
 

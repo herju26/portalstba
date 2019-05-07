@@ -1,15 +1,21 @@
-<div class="page" style="background-color:rgb(201, 201, 201)">
+    <div class="card">  
+    <div class="header" >
+    <div class="container">
+         <div class="header" >
+                 <h4 class="title">Konfigurasi Tahun Ajaran Aktif</h4>
+                 <p class="category">STBA LIA Yogyakarta</p>
+             <hr/>
+         </br>
+    </div> 
+    <div class="page" >
     <div class="page-content container-fluid">
         <div class="row" data-plugin="matchHeight" data-by-row="true">
             <div class="col-xxl-12">
-                <div id="teamCompletedWidget" class="card card-shadow example-responsive">
                     <div class="card-block p-20 pb-25">
                         <div class="row pb-40" data-plugin="matchHeight">
                             <div class="col-md-6">
                                 <div class="counter text-left pl-10">
-                                    <div class="counter-label"><i class="fa fa-gears" aria-hidden="true"></i>
-                                        <?= $judul ?>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -20,7 +26,7 @@
                                     <input type="hidden" value="<?= $data->id_ta ?>" name="id_ta" />
                                     <div class="row">
                                         <div class="col-lg-2">
-                                            <label>Tahun Ajaran</label>
+                                            <label> Tahun Ajaran</label>
                                         </div>
                                         <div class="col-lg-3">
                                             <select name="ta" class="form-control">
@@ -53,8 +59,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
+</div>
+</div>
         </div>
     </div>
 </div>
+<br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
+

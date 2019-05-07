@@ -48,15 +48,15 @@
 
                         <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
+                                <thead style="background-color: #4091e2;">
                                     <tr>
-                                        <th>No.</th>
-                                        <th>ID Matakuliah</th>
-                                        <th>ID Dosen</th>
-                                        <th>Tanggal</th>
-                                        <th>ID Akun Ploting</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th style="color: white;">No.</th>
+                                        <th style="color: white;">ID Matakuliah</th>
+                                        <th style="color: white;">ID Dosen</th>
+                                        <th style="color: white;">Tanggal</th>
+                                        <th style="color: white;">ID Akun Ploting</th>
+                                        <th style="color: white;">Status</th>
+                                        <th style="color: white;">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

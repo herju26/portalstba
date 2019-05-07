@@ -1,3 +1,12 @@
+<div class="card">  
+    <div class="header" >
+    <div class="container">
+         <div class="header" >
+                 <h4 class="title">Data Matakuliah</h4>
+                 <p class="category">STBA LIA Yogyakarta</p>
+             <hr/>
+         </br>
+    </div>
 <div class="page">
     <div class="page-content container-fluid">
         <div class="row" data-plugin="matchHeight" data-by-row="true">
@@ -6,9 +15,7 @@
                     <div class="card-block p-20 pb-25">
                         <div class="row pb-40" data-plugin="matchHeight">
                             <div class="col-md-6">
-                                <div class="counter text-left pl-10">
-                                    <div class="counter-label"><i class="fa fa-list" aria-hidden="true"></i> Matakuliah</div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="row" style="margin-top: -40px" data-plugin="matchHeight">
@@ -33,20 +40,20 @@
                                 </div>
                                 <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
+                                <thead style="background-color: #4091e2;">
                                     <tr>
-                                        <th>No</th>
-                                        <th>Kode MK</th>
-                                        <th>Nama MK</th>
+                                        <th style="color: white;">No</th>
+                                        <th style="color: white;">Kode MK</th>
+                                        <th style="color: white;">Nama MK</th>
                                         <!------------
                                         <th>Id Prasyarat</th>
                                         <th>Id Kel Mk</th>
                                         -------------->
-                                        <th>SKS</th>
-                                        <th>Periode Aktif</th>
-                                        <th>Jurusan</th>
-                                        <th>Semester</th>
-                                        <th>Aksi</th>
+                                        <th style="color: white;">SKS</th>
+                                        <th style="color: white;">Periode Aktif</th>
+                                        <th style="color: white;">Jurusan</th>
+                                        <th style="color: white;">Semester</th>
+                                        <th style="color: white;">Aksi</th>
                                     </tr>
                                 </thead>
                                     <?php
@@ -104,7 +111,7 @@
                                             <?php echo $matakuliah->semester_prodi ?>
                                         </td>
                                         <td style="text-align:center" width="200px">
-                                            <a class="btn btn-warning" href="<?= site_url('matakuliah/update/'.$matakuliah->id_mk)?>"><i class="pe-7s-pen"></i></a>
+                                            <a class="btn btn-warning" href="<?= site_url('admin/baak/matakuliah/update/'.$matakuliah->id_mk)?>"><i class="pe-7s-pen"></i></a>
                                             <a class="btn btn-danger"  onclick="javasciprt: return confirm('Anda yakin akan menghapus data jenjang? ')"  href="<?= site_url('matakuliah/delete/'.$matakuliah->id_mk)?>"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>

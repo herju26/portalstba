@@ -15,9 +15,7 @@
                     <div class="card-block p-20 pb-25">
                         <div class="row pb-40" data-plugin="matchHeight">
                             <div class="col-md-6">
-                                <div class="counter text-left pl-10">
-                                    <div class="counter-label"><i class="fa fa-building" aria-hidden="true"></i> Ruangan</div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="row" style="margin-top: -40px" data-plugin="matchHeight">
@@ -28,28 +26,30 @@
                                         <?php echo anchor(site_url('admin/baak/jam/create'),'<i class="fa fa-plus"></i> Tambah', 'class="btn btn-primary"'); ?>
                                     </div>
                                     <div class="col-md-4 text-center">
-                                        <div style="margin-top: 8px" id="message">
+                                         <?php if ($this->session->flashdata('message')): ?>
+                                        <div class="alert alert-success" role="alert">
                                             <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
-                                        </div>
+                                    </div>
+                                    <?php endif; ?>
+
                                     </div>
                                     <div class="col-md-1 text-right">
                                     </div>
-                                    <div class="col-md-3 text-right">
-                                       
+                                    <div class="col-md-3 text-right">   
                                     </div>
                                 </div>
                                 <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
+                                <thead  style="background-color: #4091e2;">
                                     <tr>
-                                        <th>No</th>
-                                        <th>Jam Mulai</th>
-                                        <th>Jam Akhir</th>
-                                        <th>Aksi</th>
+                                        <th style="color: white;">No</th>
+                                        <th style="color: white;">Jam Mulai</th>
+                                        <th style="color: white;">Jam Akhir</th>
+                                        <th style="color: white;">Aksi</th>
                                     </tr>
                                 </thead>
                                     <?php
-                                    foreach ($room_data as $room)
+                                    foreach ($jam_data as $jam)
                                     {
                                     ?>
                                     <tr>
@@ -57,16 +57,16 @@
                                             <?php echo ++$start ?>
                                         </td>
                                         <td>
-                                            <?php echo $room->jam_mulai ?>
+                                            <?php echo $jam->jam_mulai ?>
                                         </td>
                                         <td>
-                                            <?php echo $room->jam_akhir ?>
+                                            <?php echo $jam->jam_akhir ?>
                                         </td>
                                         
                                         <td style="text-align:center" width="200px">
                                             
-                                            <a class="btn btn-warning" href="<?= site_url('admin/baak/jam/update/'.$room->id_jam)?>"><i class="fa fa-pen"></i></a>
-                                            <a class="btn btn-danger"  onclick="javasciprt: return confirm('Anda yakin akan menghapus data Jam? ')"  href="<?= site_url('admin/baak/jam/delete/'.$room->id_jam)?>"><i class="fa fa-trash"></i></a>
+                                            <a class="btn btn-warning" href="<?= site_url('admin/baak/jam/update/'.$jam->id_jam)?>"><i class="fa fa-pen"></i></a>
+                                            <a class="btn btn-danger"  onclick="javasciprt: return confirm('Anda yakin akan menghapus data Jam? ')"  href="<?= site_url('admin/baak/jam/delete/'.$jam->id_jam)?>"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php
@@ -78,9 +78,7 @@
                                         <a href="#" class="btn btn-primary">Total Record :
                                             <?php echo $total_rows ?></a>
                                     </div>
-                                    <div class="col-md-6 text-right">
-                                        <?php echo $pagination ?>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

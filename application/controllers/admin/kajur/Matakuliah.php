@@ -82,14 +82,14 @@ class Matakuliah extends CI_Controller
                     'nama_kelas' => $nama_kelas
             );
             $this->db->insert('tbl_kelas_mk', $data);
-            redirect(site_url('matakuliah/kelas/'.$id_mk));
+            redirect(site_url('admin/kajur/matakuliah/kelas/'.$id_mk));
         }else{
             $data = array(
                 'id'=>$id,
                 'mk'=>$this->Matakuliah_model->get_by_id($id),
-                'action' => site_url('matakuliah/add_class/'.$id),
+                'action' => site_url('admin/kajur/matakuliah/add_class/'.$id),
                 'judul' => 'Tambah Kelas MK',
-                'content' => 'matakuliah/add_class',
+                'content' => 'adminstba/layout/content/matakuliah/add_class',
             );
             $this->load->view('adminstba/layout/layout',$data);   
         }
@@ -100,7 +100,7 @@ class Matakuliah extends CI_Controller
         $mk=$this->input->get('mk');
         $this->db->where('id', $id);
         $this->db->delete('tbl_kelas_mk');
-        redirect(site_url('matakuliah/kelas/'.$mk));
+        redirect(site_url('admin/kajur/matakuliah/kelas/'.$mk));
     }
 
     public function read($id) 
@@ -118,12 +118,12 @@ class Matakuliah extends CI_Controller
                 'kel_mk' => $this->db->query("select * from tbl_kelompok_mk where id_kel_mk='$row->id_kel_mk'")->row(),
                 'prasyarat' => $this->db->query("select * from tbl_prasyarat_mk where id_prasyarat_mk='$row->id_prasyarat'")->row(),
                 'judul' => 'Matakuliah',
-                'content' => 'matakuliah/tb_matakuliah_read',
+                'content' => 'admin/kajur/matakuliah/tb_matakuliah_read',
 	       );
-        $this->load->view('layout/layout',$data);
+        $this->load->view('adminstba/layout/layout',$data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('matakuliah'));
+            redirect(site_url('admin/kajur/matakuliah'));
         }
     }
 
@@ -172,7 +172,7 @@ class Matakuliah extends CI_Controller
 
             $this->Matakuliah_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('matakuliah'));
+            redirect(site_url('admin/kajur/matakuliah'));
         }
     }
     
@@ -196,12 +196,12 @@ class Matakuliah extends CI_Controller
                 'prasyarat' => $this->db->query("select * from tbl_prasyarat_mk")->result(),
                 'jurusans' => $this->db->query("select * from tb_jurusan a join tb_jenjang b on a.id_jenjang=b.id_jenjang")->result(),
                 'judul' => 'Matakuliah',
-                'content' => 'matakuliah/tb_matakuliah_form',
+                'content' => 'admin/kajur/matakuliah/tb_matakuliah_form',
 	       );
         $this->load->view('layout/layout',$data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('matakuliah'));
+            redirect(site_url('admin/kajur/matakuliah'));
         }
     }
     
@@ -223,7 +223,7 @@ class Matakuliah extends CI_Controller
 	       );
             $this->Matakuliah_model->update($this->input->post('id_mk', TRUE), $data);
             $this->session->set_flashdata('message', 'Berhasil memperbarui data');
-            redirect(site_url('matakuliah'));
+            redirect(site_url('admin/kajur/matakuliah'));
         }
     }
     
@@ -237,10 +237,10 @@ class Matakuliah extends CI_Controller
             );
             $this->Matakuliah_model->update($id, $data);
             $this->session->set_flashdata('message', 'Delete Record Success');
-            redirect(site_url('matakuliah'));
+            redirect(site_url('admin/kajur/matakuliah'));
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('matakuliah'));
+            redirect(site_url('admin/kajur/matakuliah'));
         }
     }
 

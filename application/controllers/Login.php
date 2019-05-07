@@ -15,11 +15,15 @@ class Login extends CI_Controller{
     $validate = $this->login_model->validate($email,$password);
     if($validate->num_rows() > 0){
         $data  = $validate->row_array();
+        $user_id  = $data['user_id'];
         $name  = $data['user_name'];
         $email = $data['user_email'];
         $level = $data['user_level'];
         $avatar = $data['avatar'];
+        $last_login = $data['last_login'];
         $sesdata = array(
+            'last_login'=>date('Y-m-d H:i:s'),
+            'user_id'  => $user_id,
             'username'  => $name,
             'email'     => $email,
             'level'     => $level,
@@ -46,8 +50,12 @@ class Login extends CI_Controller{
   }
  
   function logout(){
-      $this->session->sess_destroy();
-      redirect('login');
+        date_default_timezone_set("ASIA/JAKARTA");
+        $date = array('last_login' => date('Y-m-d H:i:s'));
+        $user_id = $this->session->userdata('user_id');
+        $this->login_model->logout($date, $user_id);
+        $this->session->sess_destroy();
+        redirect('login');
   }
  
 }

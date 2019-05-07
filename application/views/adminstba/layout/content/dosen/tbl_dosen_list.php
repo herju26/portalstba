@@ -2,7 +2,7 @@
     <div class="header" >
     <div class="container">
          <div class="header" >
-                 <h4 class="fa fa-graduation-cap">Data Dosen</h4>
+                 <h4 class="title">Data Dosen</h4>
                  <p class="category">STBA LIA Yogyakarta</p>
              <hr/>
          </br>
@@ -15,9 +15,7 @@
                     <div class="card-block p-20 pb-25">
                         <div class="row pb-40" data-plugin="matchHeight">
                             <div class="col-md-6">
-                                <div class="counter text-left pl-10">
-                                    <div class="counter-label"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Dosen</div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="row" style="margin-top: -40px" data-plugin="matchHeight">
@@ -26,7 +24,9 @@
                                 <div class="row" style="margin-bottom: 10px">
                                     <div class="col-md-4">
                                         <?php echo anchor(site_url('admin/baak/dosen/create'),'<i class="fa fa-plus"></i> Tambah Dosen', 'class="btn btn-primary"'); ?>
+                                       <br/> 
                                     </div>
+                                    <br/>
                                     <div class="col-md-4 text-center">
                                         <div style="margin-top: 8px" id="message">
                                             <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
@@ -38,16 +38,16 @@
                                 </div>
                                 <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
+                                <thead style="background-color: #4091e2;">
                                     <tr>
-                                        <th>No</th>
-                                        <th>NIDN</th>
-                                        <th>Nama</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>Alamat</th>
-                                        <th>Tempat,Tgl Lahir</th>
-                                        <th>Agama</th>
-                                        <th>Aksi</th>
+                                        <th style="color: white;">No</th>
+                                        <th style="color: white;">NIDN</th>
+                                        <th style="color: white;">Nama</th>
+                                        <th style="color: white;">Jenis Kelamin</th>
+                                        <th style="color: white;">Alamat</th>
+                                        <th style="color: white;">Tempat,Tgl Lahir</th>
+                                        <th style="color: white;">Agama</th>
+                                        <th style="color: white;">Aksi</th>
                                     </tr>
                                 </thead>
                                     <?php

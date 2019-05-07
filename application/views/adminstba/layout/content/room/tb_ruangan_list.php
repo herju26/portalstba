@@ -15,9 +15,7 @@
                     <div class="card-block p-20 pb-25">
                         <div class="row pb-40" data-plugin="matchHeight">
                             <div class="col-md-6">
-                                <div class="counter text-left pl-10">
-                                    <div class="counter-label"><i class="fa fa-building" aria-hidden="true"></i> Ruangan</div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="row" style="margin-top: -40px" data-plugin="matchHeight">
@@ -28,9 +26,11 @@
                                         <?php echo anchor(site_url('admin/baak/room/create'),'<i class="fa fa-plus"></i> Tambah', 'class="btn btn-primary"'); ?>
                                     </div>
                                     <div class="col-md-4 text-center">
-                                        <div style="margin-top: 8px" id="message">
+                                        <?php if ($this->session->flashdata('message')): ?>
+                                        <div class="alert alert-success" role="alert">
                                             <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
-                                        </div>
+                                    </div>
+                                    <?php endif; ?>
                                     </div>
                                     <div class="col-md-1 text-right">
                                     </div>
@@ -40,13 +40,13 @@
                                 </div>
                                 <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
+                                <thead  style="background-color: #4091e2;">
                                     <tr>
-                                        <th>No</th>
-                                        <th>Ruangan</th>
-                                        <th>Jenis</th>
-                                        <th>Kapasitas</th>
-                                        <th>Aksi</th>
+                                        <th style="color: white;">No</th>
+                                        <th style="color: white;">Ruangan</th>
+                                        <th style="color: white;">Jenis</th>
+                                        <th style="color: white;">Kapasitas</th>
+                                        <th style="color: white;">Aksi</th>
                                     </tr>
                                 </thead>
                                     <?php

@@ -2,7 +2,7 @@
     <div class="header" >
     <div class="container">
          <div class="header" >
-                 <h4 class="title">Tambah Data Ruangan</h4>
+                 <h4 class="title">Ruangan</h4>
                  <p class="category">STBA LIA Yogyakarta</p>
              <hr/>
          </br>
@@ -11,13 +11,10 @@
     <div class="page-content container-fluid">
         <div class="row" data-plugin="matchHeight" data-by-row="true">
             <div class="col-xxl-12">
-                <div id="teamCompletedWidget" class="card card-shadow example-responsive">
                     <div class="card-block p-20 pb-25">
                         <div class="row pb-40" data-plugin="matchHeight">
                             <div class="col-md-6">
-                                <div class="counter text-left pl-10">
-                                    <div class="counter-label"><i class="fa fa-building" aria-hidden="true"></i> Ruangan</div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="row" style="margin-top: -40px" data-plugin="matchHeight">
@@ -47,14 +44,17 @@
                                     <button type="submit" class="btn btn-primary">
                                         <?php echo $button ?></button>
                                     <a href="<?php echo site_url('admin/baak/room') ?>" class="btn btn-default"><i class="fa fa-arrow-left"></i> Kembali</a>
+                                    <br/>
+                                    <br/>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 </div>
 </div>
         </div>
     </div>
 </div>
+<br/>
+<br/>

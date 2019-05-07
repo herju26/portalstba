@@ -1,4 +1,13 @@
-<div class="page" style="background-color:rgb(201, 201, 201)">
+    <div class="card">  
+    <div class="header" >
+    <div class="container">
+         <div class="header" >
+                 <h4 class="title">Jadwal Matakuliah</h4>
+                 <p class="category">STBA LIA Yogyakarta</p>
+             <hr/>
+         </br>
+    </div> 
+<div class="page" >
     <div class="page-content container-fluid">
         <div class="row" data-plugin="matchHeight" data-by-row="true">
             <div class="col-xxl-12">
@@ -7,9 +16,7 @@
                         <div class="row pb-40" data-plugin="matchHeight">
                             <div class="col-md-6">
                                 <div class="counter text-left pl-10">
-                                    <div class="counter-label"><i class="fa fa-calendar-o" aria-hidden="true"></i>
-                                        <?= $judul ?>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -30,40 +37,22 @@
                                 }
                                 ?>
                                 <br>
-                                <form class="form-inline" action="<?= site_url('jadwal/search') ?>" method="get">
-                                    <div class="form-group">
-                                        <label class="" for="email">Prodi </label> &nbsp;
-                                        <select class="form-control" name="prodi">
-                                            <option value="">- Prodi -</option>
-                                            <?php
-                                            foreach($prodi as $data_prodi){
-                                            ?>
-                                            <option value="<?= $data_prodi->id_jurusan ?>">
-                                                <?= $data_prodi->nama_jenjang." ".$data_prodi->nama_jurusan ?>
-                                            </option>
-                                            <?php
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                    <br>
-                                    
-                                </form>
+                                
                                 <br>
                                 <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                                 
-                                    <thead>
-                                        <th>No</th>
-                                        <th>Matakuliah</th>
-                                        <th>Prodi</th>
-                                        <th>Tahun Ajaran</th>
-                                        <th>Semester</th>
-                                        <th>Kelas</th>
-                                        <th>Dosen</th>
-                                        <th>Ruang</th>
-                                        <th>Hari</th>
-                                        <th>Jam</th>
+                                    <thead style="background-color: #4091e2;">
+                                        <th style="color: white;">No</th>
+                                        <th style="color: white;">Matakuliah</th>
+                                        <th style="color: white;">Prodi</th>
+                                        <th style="color: white;">Tahun Ajaran</th>
+                                        <th style="color: white;">Semester</th>
+                                        <th style="color: white;">Kelas</th>
+                                        <th style="color: white;">Dosen</th>
+                                        <th style="color: white;">Ruang</th>
+                                        <th style="color: white;">Hari</th>
+                                        <th style="color: white;">Jam</th>
                                         <?php
                                         if($this->session->userdata('level')!='kajur' && $this->session->userdata('level')!='dosen' && $this->session->userdata('level')!='baak'){
                                         ?>
@@ -209,7 +198,8 @@
                     </div>
                 </div>
             </div>
-
+</div>
+    </div>
         </div>
     </div>
 </div>

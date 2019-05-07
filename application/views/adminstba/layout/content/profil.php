@@ -1,3 +1,4 @@
+<link href="<?php echo base_url('assets/materialize/css/materialize.css'); ?>" type="text/css" rel="stylesheet" media="screen,projection"/>
 <div class="row">
   <div class="col s12">
     <div class="card">

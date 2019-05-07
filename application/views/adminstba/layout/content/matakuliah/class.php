@@ -65,7 +65,7 @@
                                         </td>
                                     </tr>
                                 </table>
-                                <a href="<?php echo site_url('matakuliah/add_class/'.$id_mk) ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Kelas</a>
+                                <a href="<?php echo site_url('admin/kajur/matakuliah/add_class/'.$id_mk) ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Kelas</a>
                                 <br>
                                 <br>
                                 <table class="table table-bordered" style="margin-bottom: 10px">
@@ -82,7 +82,7 @@
                                         <td><?= $i ?></td>
                                         <td><?= $data->nama_kelas ?></td>
                                         <td>
-                                            <a class="btn btn-danger"  onclick="javasciprt: return confirm('Anda yakin akan menghapus data kelas? ')"  href="<?= site_url('matakuliah/kelas_delete?id='.$data->id.'&mk='.$id_mk)?>"><i class="fa fa-trash"></i></a>
+                                            <a class="btn btn-danger"  onclick="javasciprt: return confirm('Anda yakin akan menghapus data kelas? ')"  href="<?= site_url('admin/kajur/matakuliah/kelas_delete?id='.$data->id.'&mk='.$id_mk)?>"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php
@@ -90,7 +90,7 @@
                                     }
                                     ?>
                                 </table>
-                                <a href="<?php echo site_url('plot_kelas') ?>" class="btn btn-default"><i class="fa fa-arrow-left"></i> Kembali</a>
+                                <a href="<?php echo site_url('admin/kajur/plot_kelas') ?>" class="btn btn-default"><i class="fa fa-arrow-left"></i> Kembali</a>
                             </div>
                         </div>
                     </div>

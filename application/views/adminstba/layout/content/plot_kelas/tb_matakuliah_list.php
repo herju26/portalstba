@@ -40,22 +40,22 @@
                                 </div>
         <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-            <tr>
-                <th>No</th>
-		<th>Kode Mk</th>
-		<th>Nama Mk</th>
-		<th>Sks Mk</th>
-		<th>Id Jurusan</th>
-		<th>Tahun Ajaran</th>
-		<th>Semester</th>
-        <th>Jumlah Kelas</th>
-        <th>Action</th>
-    </thead>
-            </tr><?php
-            foreach ($plot_kelas_data as $plot_kelas)
-            {
-                ?>
+                                <thead style="background-color: #4091e2;">
+                <tr>
+                    <th style="color: white;">No</th>
+            		<th style="color: white;">Kode Mk</th>
+            		<th style="color: white;">Nama Mk</th>
+            		<th style="color: white;">Sks Mk</th>
+            		<th style="color: white;">Id Jurusan</th>
+            		<th style="color: white;">Tahun Ajaran</th>
+            		<th style="color: white;">Semester</th>
+                    <th style="color: white;">Jumlah Kelas</th>
+                    <th style="color: white;">Action</th>
+                    </thead>
+                        </tr><?php
+                        foreach ($plot_kelas_data as $plot_kelas)
+                        {
+                            ?>
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
 			<td><?php echo $plot_kelas->kode_mk ?></td>
@@ -66,7 +66,7 @@
 			<td><?php echo $plot_kelas->semester_prodi ?></td>
 			
             <td><?php echo $plot_kelas->jml_kelas ?></td>
-            <td><a class="btn btn-primary" href="<?= site_url('admin/baak/matakuliah/kelas/'.$plot_kelas->id_makul)?>"><i class="fa fa-plus"></i></a></td>
+            <td><a class="btn btn-primary" href="<?= site_url('admin/kajur/matakuliah/kelas/'.$plot_kelas->id_makul)?>"><i class="fa fa-plus"></i></a></td>
 		  </tr>
                 <?php
             }
@@ -91,4 +91,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

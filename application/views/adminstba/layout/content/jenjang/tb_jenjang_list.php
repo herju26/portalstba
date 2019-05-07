@@ -1,4 +1,13 @@
-<div class="page" style="background-color:rgb(201, 201, 201)">
+<div class="card">  
+    <div class="header" >
+    <div class="container">
+         <div class="header" >
+                 <h4 class="title">Data Jenjang</h4>
+                 <p class="category">STBA LIA Yogyakarta</p>
+             <hr/>
+         </br>
+    </div>
+<div class="page" >
     <div class="page-content container-fluid">
         <div class="row" data-plugin="matchHeight" data-by-row="true">
             <div class="col-xxl-12">
@@ -6,9 +15,7 @@
                     <div class="card-block p-20 pb-25">
                         <div class="row pb-40" data-plugin="matchHeight">
                             <div class="col-md-6">
-                                <div class="counter text-left pl-10">
-                                    <div class="counter-label"><i class="fa fa-clone" aria-hidden="true"></i> Jenjang</div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="row" style="margin-top: -40px" data-plugin="matchHeight">
@@ -33,11 +40,11 @@
                                 </div>
                                 <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
+                                <thead style="background-color: #4091e2;">
                                     <tr>
-                                        <th>No</th>
-                                        <th>Nama Jenjang</th>
-                                        <th>Aksi</th>
+                                        <th style="color: white;">No</th>
+                                        <th style="color: white;">Nama Jenjang</th>
+                                        <th style="color: white;">Aksi</th>
                                     </tr>
                                 </thead>
                                     <?php
@@ -75,7 +82,8 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        </div>
         </div>
     </div>
 </div>

@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-ct-blue navbar-fixed">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -8,7 +7,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">STBA LIA Yogyakarta </a>
+                    <a class="navbar-brand" href="<?php echo site_url('admin/home') ?>">STBA LIA Yogyakarta </a>
                     <img src="<?php echo base_url('assets/img/stbaww.png')?>" width="45px" height="45pxa"" alt="" />
                 </div>
                 <div class="collapse navbar-collapse">
@@ -34,6 +33,7 @@
 
                               </a>
                               <ul class="dropdown-menu">
+                                
                                 <li><a href="<?php echo site_url('admin/kajur/profile');?>"><font color="black"><i class="pe-7s-tools"></i> Settings</a></font></li>
                                 <li><a href="<?php echo site_url('login/logout');?>"><font color="black"><i class="pe-7s-power"></i> Sign Out</a></font></li>
 

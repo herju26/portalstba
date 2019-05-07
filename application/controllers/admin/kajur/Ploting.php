@@ -6,7 +6,7 @@ class Ploting extends CI_Controller {
         date_default_timezone_set('Asia/Jakarta');
 
 		if($this->session->userdata('logged_in') !== TRUE){
-      redirect('login');
+      redirect('adminstba/login');
     }
 	}
 
@@ -69,9 +69,9 @@ class Ploting extends CI_Controller {
             'dosen' => $dosen,
             'prodi' => $prodi,
             'judul' => 'Ploting Dosen',
-            'content' => 'ploting/index',
+            'content' => 'admin/kajur/ploting',
         );
-        $this->load->view('layout/layout',$data);
+        $this->load->view('adminstba/layout/layout',$data);
 	}
     
 	function single_plot(){
@@ -85,25 +85,25 @@ class Ploting extends CI_Controller {
                 'ploting_id_akun' => $id_user
         );
         $this->db->insert('tbl_ploting', $data);
-        redirect('ploting/index');
+        redirect('admin/kajur/ploting/index');
         
 	}
 	function delete($id){
         $this->db->where('id_ploting', $id);
         $this->db->delete('tbl_ploting');
-        redirect('ploting/index');
+        redirect('admin/kajur/ploting/index');
 	}
 	function acc($id){
         $this->db->set('ploting_status', 'Y');
         $this->db->where('id_ploting', $id);
         $this->db->update('tbl_ploting');
-        redirect('ploting/index');
+        redirect('admin/kajur/ploting/index');
 	}
 	function deny($id){
         $this->db->set('ploting_status', 'N');
         $this->db->where('id_ploting', $id);
         $this->db->update('tbl_ploting');
-        redirect('ploting/index');
+        redirect('admin/kajur/ploting/index');
 	}
 
 }

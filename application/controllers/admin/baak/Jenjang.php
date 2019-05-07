@@ -10,6 +10,9 @@ class Jenjang extends CI_Controller
         parent::__construct();
         $this->load->model('Jenjang_model');
         $this->load->library('form_validation');
+        if($this->session->userdata('logged_in') !== TRUE){
+      redirect('login');
+        }
     }
 
     public function index()

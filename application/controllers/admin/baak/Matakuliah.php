@@ -10,6 +10,9 @@ class Matakuliah extends CI_Controller
         parent::__construct();
         $this->load->model('Matakuliah_model');
         $this->load->library('form_validation');
+        if($this->session->userdata('logged_in') !== TRUE){
+      redirect('login');
+        }
     }
 
     public function index()
@@ -82,12 +85,12 @@ class Matakuliah extends CI_Controller
                     'nama_kelas' => $nama_kelas
             );
             $this->db->insert('tbl_kelas_mk', $data);
-            redirect(site_url('matakuliah/kelas/'.$id_mk));
+            redirect(site_url('admin/baak/matakuliah/kelas/'.$id_mk));
         }else{
             $data = array(
                 'id'=>$id,
                 'mk'=>$this->Matakuliah_model->get_by_id($id),
-                'action' => site_url('matakuliah/add_class/'.$id),
+                'action' => site_url('admin/baak/matakuliah/add_class/'.$id),
                 'judul' => 'Tambah Kelas MK',
                 'content' => 'adminstba/layout/content/matakuliah/add_class',
             );
@@ -100,7 +103,7 @@ class Matakuliah extends CI_Controller
         $mk=$this->input->get('mk');
         $this->db->where('id', $id);
         $this->db->delete('tbl_kelas_mk');
-        redirect(site_url('matakuliah/kelas/'.$mk));
+        redirect(site_url('admin/baak/matakuliah/kelas/'.$mk));
     }
 
     public function read($id) 
@@ -118,9 +121,9 @@ class Matakuliah extends CI_Controller
                 'kel_mk' => $this->db->query("select * from tbl_kelompok_mk where id_kel_mk='$row->id_kel_mk'")->row(),
                 'prasyarat' => $this->db->query("select * from tbl_prasyarat_mk where id_prasyarat_mk='$row->id_prasyarat'")->row(),
                 'judul' => 'Matakuliah',
-                'content' => 'matakuliah/tb_matakuliah_read',
+                'content' => 'admin/baak/matakuliah/tb_matakuliah_read',
 	       );
-        $this->load->view('layout/layout',$data);
+        $this->load->view('adminstba/layout/layout',$data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('matakuliah'));

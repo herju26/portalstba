@@ -1,14 +1,20 @@
-<div class="page" style="background-color:rgb(201, 201, 201)">
+<div class="card">  
+    <div class="header" >
+    <div class="container">
+         <div class="header" >
+                 <h4 class="title">Data Prodi</h4>
+                 <p class="category">STBA LIA Yogyakarta</p>
+             <hr/>
+         </br>
+    </div>
+<div class="page" >
     <div class="page-content container-fluid">
         <div class="row" data-plugin="matchHeight" data-by-row="true">
             <div class="col-xxl-12">
-                <div id="teamCompletedWidget" class="card card-shadow example-responsive">
                     <div class="card-block p-20 pb-25">
                         <div class="row pb-40" data-plugin="matchHeight">
                             <div class="col-md-6">
-                                <div class="counter text-left pl-10">
-                                    <div class="counter-label"><i class="fa fa-clone" aria-hidden="true"></i> Jurusan</div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="row" style="margin-top: -40px" data-plugin="matchHeight">
@@ -16,9 +22,9 @@
                                 <br>
                                 <form action="<?php echo $action; ?>" method="post">
                                     <div class="form-group">
-                                        <label for="varchar">Nama Jurusan
+                                        <label for="varchar">Nama Prodi
                                             <?php echo form_error('nama_jurusan') ?></label>
-                                        <input type="text" class="form-control" name="nama_jurusan" id="nama_jurusan" placeholder="Nama Jurusan" value="<?php echo $nama_jurusan; ?>" />
+                                        <input type="text" class="form-control" name="nama_jurusan" id="nama_jurusan" placeholder="Nama Prodi" value="<?php echo $nama_jurusan; ?>" />
                                     </div>
                                     <div class="form-group">
                                         <label for="int">Id Jenjang
@@ -53,7 +59,13 @@
                     </div>
                 </div>
             </div>
-
-        </div>
+</div>
+</div>
     </div>
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>

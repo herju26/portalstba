@@ -502,7 +502,7 @@ class Krs extends CI_Controller {
         $this->db->update('tbl_krs', $data);
         redirect(base_url("krs/search?nim=".$nim));
 	}
-	function jadwal(){
+	function jadwalkrs(){
         $prodi=$this->db->query("select * from tb_jurusan a join tb_jenjang b on a.id_jenjang=b.id_jenjang join tbl_jadwal_krs c on c.id_jurusan=a.id_jurusan")->result();
 		$data = array(
             'judul' => 'Jadwal KRS',

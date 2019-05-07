@@ -1,4 +1,5 @@
 <?php $this->load->view('adminstba/layout_more/top');?>
+<div class="card" >
 <div class="header" >
 	<div class="container">
 		 <div class="header" >
@@ -7,13 +8,20 @@
              <hr/>
          </br>
     </div>
+
 			<form action="<?php echo base_url().'index.php/post_berita/simpan_post'?>" method="post" enctype="multipart/form-data">
+	            <label for="varchar">Judul Berita</label>
 	            <input type="text" name="judul" class="form-control" placeholder="Judul berita" required/><br/>
-	            <textarea id="ckeditor" name="berita" class="form-control" required></textarea><br/>
-	            <input type="file" name="filefoto"><br>
+	            <label for="varchar">Isi Pengumuman</label>
+	            <textarea id="ckeditor" name="berita" class="form-control" required></textarea><br/><br/>
+	            <label for="varchar">Gambar Lampiran</label>
+	            <input type="file" name="filefoto"><br><br/>
+	            <label for="varchar">Penanggung Jawab</label>
 	            <input type="text" name="pj" class="form-control" placeholder="Penanggung Jawab Pengumuman" required/><br/>
 	            <button class="btn btn-primary btn-lg" type="submit">Post Berita</button>
+
             </form>
+            <br/>
 		</div>
 		
 	</div>
@@ -30,14 +38,6 @@
 </body>
 </html>
 </br>
-<div class="container-fluid">
-                <nav class="pull-left">
-                    
-                </nav>
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> STBA LIA Yogyakarta</a> All right Reserved.
-                </p>
-            </div>
 
 
 
@@ -64,3 +64,4 @@
         <script src="<?php echo base_url('assets/js/kcdev.js'); ?>"></script>
 
 
+<?php $this->load->view('adminstba/layout/footer/footer');?>

@@ -11,7 +11,8 @@
              <hr/>
          </br>
     </div>
-    <button style="background-color: #4091e2;" class="btn btn-default btn-block" ><a style="color:white;" href="<?php echo base_url().'index.php/post_berita/lists';?>"> Kembali</a></button>
+    <a class="btn btn-default btn-block" style="background-color: #4091e2; color:white;" href="<?php echo base_url().'post_berita/lists';?>"> Kembali </a>
+    
 		<div class="col-md-8 col-md-offset-2">
 			<h2><?php echo $b['berita_judul'];?></h2><hr/>
 			<img src="<?php echo base_url().'assets/images/'.$b['berita_image'];?>" width="650px" height="900">
